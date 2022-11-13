@@ -1,18 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useForm } from 'react-hook-form';
 import getNews from '../store/structure/thunks';
 
 function SearchInput() {
+  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
-  const myFunc = function (e) {
-    e.preventDefault();
-    dispatch(getNews('Grodno'));
-  };
+  const onSubmit = (data) => dispatch(getNews(data.town));
   return (
     <div className="app wrapper">
-      <form>
-        <input type="text" placeholder="Get NASA news" />
-        <button type="submit" onClick={myFunc}>Get</button>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input type="text" placeholder="Enter city here" required="required" {...register('town')} />
+        <button type="submit">Get</button>
       </form>
     </div>
   );

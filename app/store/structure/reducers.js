@@ -3,12 +3,12 @@ import { createReducer } from '@reduxjs/toolkit';
 import getNews from './thunks';
 
 const initialState = {
-  data: {},
+  weatherData: {},
 };
 
 const appReducer = createReducer(initialState, {
   [getNews.fulfilled]: (state, action) => {
-    state.data = action.payload;
+    state.weatherData = action.payload;
   },
 });
 
