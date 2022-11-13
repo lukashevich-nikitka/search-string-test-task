@@ -1,13 +1,18 @@
 /* eslint-disable no-param-reassign */
 import { createReducer } from '@reduxjs/toolkit';
-import getNews from './thunks';
+import getWeather from './thunks';
 
 const initialState = {
-  weatherData: {},
+  weatherData: {
+    temp: null,
+    feels_like: null,
+    temp_min: null,
+    temp_max: null,
+  },
 };
 
 const appReducer = createReducer(initialState, {
-  [getNews.fulfilled]: (state, action) => {
+  [getWeather.fulfilled]: (state, action) => {
     state.weatherData = action.payload;
   },
 });

@@ -1,0 +1,94 @@
+// $color: #000000;
+// body{
+// 	color: $color;
+// }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.app-wrapper {
+    max-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20220216/pngtree-reference-to-watercolor-background-image_936128.jpg');
+    background-size:cover;
+}
+
+.weather-results-wrapper {
+    margin: auto;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    div {
+        width: 200px;
+        margin-top: 40px;
+        font-weight: 700;
+        font-size: 20px;
+        color: orangered;
+    }
+}
+
+.search-string-wrapper {
+    width: 100%;
+	height: 25%;
+    margin: auto;
+    form {
+	    background: lightgrey;
+        width: 85%;
+        height: 30%;
+        margin: auto;
+        align-self: center;
+        transform: skew(-40deg);
+        border: 2px solid lightgray;
+        opacity: 0.7;
+        input {
+            height: 100%;
+            width: calc(80% - 60px);
+            font-size: 17.5px;
+            border: none;
+            transform: skew(40deg);
+            background-color: transparent;
+            margin: 0px 30px 0px 30px;
+            outline: none;
+        }
+        button {
+            height: 100%;
+            width: 20%;
+            background-color: red;
+            color: white;
+            font-weight: 400;
+            font-size: large;
+            border: none;
+            cursor: pointer;
+            span {
+                text-transform: uppercase;
+                display:block;
+                transform: skew(40deg);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    form {
+        transform: skew(0deg) !important;
+        input {
+            transform: skew(0deg) !important;
+            width: calc(55% - 60px) !important;
+        }
+        button {
+            width: 45% !important;
+            span {
+                transform: skew(0deg) !important;
+            }
+        }
+    }
+}

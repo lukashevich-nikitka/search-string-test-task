@@ -2,7 +2,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const getNews = createAsyncThunk('weather', async (city) => {
+const getWeather = createAsyncThunk('weather', async (city) => {
   try {
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=186429c2dc77520abeefc7de9a9c8c15`,
@@ -13,4 +13,4 @@ const getNews = createAsyncThunk('weather', async (city) => {
   }
 });
 
-export default getNews;
+export default getWeather;

@@ -1,14 +1,14 @@
+/* eslint-disable no-return-assign */
 import React from 'react';
 import { connect } from 'react-redux';
 
 function Weather({ weather }) {
   return (
     <div className="weather-results-wrapper">
-      <div>{weather.name}</div>
-      <div className="weather-data">{`Temperature: ${weather.temp}`}</div>
-      <div className="weather-data">{`Feels like: ${weather.feels_like}`}</div>
-      <div className="weather-data">{`Temperature min: ${weather.temp_min}`}</div>
-      <div className="weather-data">{`Temperature max: ${weather.temp_max}`}</div>
+      <div>{`Temperature: ${Math.round(weather.temp)}`}</div>
+      <div>{`Feels like: ${Math.round(weather.feels_like)}`}</div>
+      <div>{`Temperature min: ${Math.round(weather.temp_min)}`}</div>
+      <div>{`Temperature max: ${Math.round(weather.temp_max)}`}</div>
     </div>
   );
 }
