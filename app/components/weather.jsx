@@ -3,6 +3,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 function Weather({ weather }) {
+  if (typeof weather === 'string') {
+    return (
+      <div className="weather-results-wrapper">
+        <div>{`Something went wrong: ${weather}`}</div>
+      </div>
+    );
+  }
   return (
     <div className="weather-results-wrapper">
       <div>{`Temperature: ${Math.round(weather.temp)}`}</div>
